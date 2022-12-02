@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EntrepriseContollerController!{% endblock %}
+
+{% block body %}
+
+    {# afficher la liste des entreprises #}
+    <h1>Liste des entreprises</h1>
+
+    <a class="btn AjouterBtn" href="{{ path('add_entreprise') }}">Ajouter une entreprise</a> <br>
+        {# {{ dump(entreprises)}} #}
+        <div class="liste">
+        {% for entreprise in entreprises %}
+
+            {# method 1: #}
+            {# {{ entreprise.raisonSociale ~ '(' ~ entreprise.cp ~ ' ' ~ entreprise.ville ~ ')'}} <br> #}
+
+            {# method 2: #}
+            {# {{entreprise.raisonSociale}} ({{entreprise.cp}} {{entreprise.ville}}) <br> #}
+            <br>
+            {# method 3: toString le code html n'est pas traité dans la method #}
+            <a href="{{ path('show_entreprise', {'id': entreprise.id}) }}">{{ entreprise }} </a>
+            <a class="btn editBtn" href="{{ path('edit_entreprise', {'id': entreprise.id}) }}">Edit</a>
+            <a class="btn deleteBtn" href="{{ path('delete_entreprise', {'id': entreprise.id}) }}">Delete</a><br>
+
+
+        {% endfor %}
+        </div>
+
+
+        {# path() est équevalent à index.php/action= ... #}
+        {# <a href="{{ path('show_entreprise', {'id': entreprise.id}) }}">{{entreprise}}</a><br> #}
+
+{% endblock %}

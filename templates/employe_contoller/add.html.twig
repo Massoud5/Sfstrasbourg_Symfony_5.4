@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EmployeContollerController!{% endblock %}
+
+{% block body %}
+    {# si on récupère un id de EmployeController, on sera dans le cas edit et il sera true. #}
+    {# {% if edit %}
+            <h1>Editer employe</h1>
+    {# sinon on est dans le cas de add #}  
+    {# {% else %}  #}
+            <h1>Ajouter employe</h1>
+    {# {% endif %} #}
+
+
+    {# variable crée dans EmployeController method add() 3eme partie#}
+    {# {{ form(formAddEmploye) }} #}
+
+    {# pour avoir une mise en page personnalisé de form: #}
+    {{ form_start(formAddEmploye) }}
+
+        <div class="form-group">
+            <div class="PrenomNom">
+                {{ form_row(formAddEmploye.prenom) }}
+                {{ form_row(formAddEmploye.nom) }}
+            </div>
+            <div class="DateVilleEnt">
+                {{ form_row(formAddEmploye.dateNaissance) }}
+                {{ form_row(formAddEmploye.dateEmbauche) }}
+                {{ form_row(formAddEmploye.ville) }}
+                {{ form_row(formAddEmploye.entreprise) }}
+                {{ form_row(formAddEmploye.submit) }}
+            </div>
+        </div>
+
+    {{ form_end(formAddEmploye) }}
+
+
+{% endblock %}

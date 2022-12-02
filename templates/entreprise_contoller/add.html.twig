@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EntrepriseContollerController!{% endblock %}
+
+{% block body %}
+
+    {# si on récupère un id de EntrepriseController, on sera dans le cas edit et il sera true. #}
+    {% if edit %}
+        <h1>Editer entreprise</h1>
+
+    {# sinon on est dans le cas de add #}
+    {% else %}
+        <h1>Ajouter entreprise</h1>
+    {% endif %}
+
+    {# variable crée dans EntrepriseController method add() 3eme partie(ligne 68) #}
+    {# {{ form(formAddEntreprise) }} #}
+
+    {# pour avoir une mise en page personnalisé de form: #}
+    {{ form_start(formAddEntreprise) }}
+
+        <div class="form-group">
+            <div class="DateVilleEnt">
+                {{ form_row(formAddEntreprise.raisonSociale) }}
+                {{ form_row(formAddEntreprise.dateCreation) }}
+                {{ form_row(formAddEntreprise.addresse) }}
+                {{ form_row(formAddEntreprise.cp) }}
+                {{ form_row(formAddEntreprise.ville) }}
+                {{ form_row(formAddEntreprise.siret) }}
+                {{ form_row(formAddEntreprise.submit) }}
+            </div>
+        </div>
+
+    {{ form_end(formAddEntreprise) }}
+
+
+{% endblock %}
+
+
+
+
+
+
+

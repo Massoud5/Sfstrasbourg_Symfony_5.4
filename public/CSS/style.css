@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aliceblue;
+}
+
+h1{
+    color: red;
+    text-align: center;
+}
+
+h2{
+    color: blue;
+}
+
+nav{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+nav a{
+    padding-bottom: 10px;
+}
+
+.AjouterBtn{
+    position: fixed;
+    top: 100px;
+    left: 20px;
+}
+
+.liste{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto 0 auto;
+    width: 500px;
+}
+
+.input{
+    display: block;
+    padding: 10px 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.PrenomNom{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    padding-top: 40px;
+}
+
+.inputPrenom, .inputNom{
+    width: 240px;
+}
+
+.DateVilleEnt{
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 100%;
+}
+
+
+.btn{
+    background: burlywood;
+    border-radius: 2px;
+    color: black;
+    font-weight: bold;
+    padding: 2px;
+    margin: 20px auto;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn:hover{
+    color: burlywood;
+    background: black;
+    cursor: pointer;
+}
+
+.btn_submit{
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+}
+
+.editBtn{
+    background: yellow;
+}
+
+.deleteBtn{
+    background: red;
+}
+.editBtn:hover{
+    color: yellow;
+    background: black;
+}
+
+.deleteBtn:hover{
+    color: red;
+    background: black;
+}
